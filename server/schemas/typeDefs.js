@@ -18,12 +18,12 @@ const typeDefs = gql`
         matchups: [Matchup]
         matchup(matchupID: ID!): Matchup
         techs: [Tech]
-        tech(techID: ID!): Tech
+        tech(techId: ID!): Tech
     }
 
     type Mutations {
-        createMatchup(tech_one: String!, tech_two: String!): Matchup
-        createVoter(matchupId: ID!, numVotes: Int!): Matchup!)
+        createMatchup(tech1: String!, tech2: String!): Matchup
+        createVoter(matchupId: ID!, techNum: Int!): Matchup!)
 
 
 
