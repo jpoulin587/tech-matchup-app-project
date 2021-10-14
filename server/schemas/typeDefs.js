@@ -5,30 +5,26 @@ const typeDefs = gql`
         _id: ID!
         tech1: String!
         tech2: String!
-        tech1Votes: Int 
-        tech2Votes: Int
+        tech1_votes: Int
+        tech2_votes: Int
     }
 
     type Tech {
         _id: ID!
-        name: String1
+        name: String!
     }
 
     type Query {
         matchups: [Matchup]
-        matchup(matchupID: ID!): Matchup
+        matchup(matchupId: ID!): Matchup
         techs: [Tech]
         tech(techId: ID!): Tech
     }
 
-    type Mutations {
+    type Mutation {
         createMatchup(tech1: String!, tech2: String!): Matchup
-        createVoter(matchupId: ID!, techNum: Int!): Matchup!)
-
-
-
-
-
+        createVote(matchupId: ID!, techNum: Int!): Matchup
+    }
 `;
 
 module.exports = typeDefs;
